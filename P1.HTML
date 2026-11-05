@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Company Website</title>
+<style>
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial; }
+
+header {
+    background:#222;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav a {
+    color:white;
+    text-decoration:none;
+    margin:10px;
+}
+.hero {
+    background:lightblue;
+    padding:60px;
+    text-align:center;
+}
+.services {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    padding:20px;
+}
+.box {
+    background:#eee;
+    padding:30px;
+    text-align:center;
+}
+footer {
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+@media(max-width:600px) {
+    header { flex-direction:column; }
+    .services { grid-template-columns:1fr; }
+    .hero { padding:30px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<h2>MyCompany</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Welcome to MyCompany</h1>
+<p>We provide the best solutions.</p>
+</section>
+
+<section class="services">
+<div class="box">Web Design</div>
+<div class="box">Development</div>
+<div class="box">Marketing</div>
+</section>
+
+<footer>
+<p>Email: company@gmail.com</p>
+<p>Copyright 2026</p>
+</footer>
+
+</body>
+</html>
