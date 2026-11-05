@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Gallery</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px gray;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 15px;
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#slide {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+@media(max-width:600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 130px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h2>Interactive Image Gallery</h2>
+
+<!-- Slideshow -->
+<img id="slide" src="https://picsum.photos/id/10/400/250">
+
+<br>
+
+<button onclick="prev()">Previous</button>
+<button onclick="next()">Next</button>
+
+<h2>Image Grid</h2>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+
+let images = [
+    "https://picsum.photos/id/10/400/250",
+    "https://picsum.photos/id/20/400/250",
+    "https://picsum.photos/id/30/400/250",
+    "https://picsum.photos/id/40/400/250",
+    "https://picsum.photos/id/50/400/250",
+    "https://picsum.photos/id/60/400/250"
+];
+
+let i = 0;
+
+// Display image grid
+images.forEach((img, index) => {
+    document.getElementById("gallery").innerHTML +=
+    `<img src="${img}" onclick="show(${index})">`;
+});
+
+// Show selected image
+function show(n) {
+    i = n;
+    document.getElementById("slide").src = images[i];
+}
+
+// Next image
+function next() {
+    i = (i + 1) % images.length;
+    show(i);
+}
+
+// Previous image
+function prev() {
+    i = (i - 1 + images.length) % images.length;
+    show(i);
+}
+
+// Auto play every 3 seconds
+setInterval(next, 3000);
+
+</script>
+
+</body>
+</html>

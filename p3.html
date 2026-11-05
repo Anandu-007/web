@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Landing Page</title>
+
+    <!-- Important for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: #222;
+    color: white;
+    padding: 15px;
+}
+
+/* Product Introduction */
+.product {
+    background: lightblue;
+    padding: 30px 15px;
+}
+
+.product img {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 25px;
+}
+
+.features div {
+    background: #eee;
+    padding: 20px;
+    flex: 1;
+    border-radius: 5px;
+}
+
+/* Call to Action */
+.cta {
+    background: #ddd;
+    padding: 25px;
+}
+
+button {
+    background: blue;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+
+    .features {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .features div {
+        width: 100%;
+    }
+
+    .product {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SmartWatch</h1>
+</header>
+
+<!-- Product Introduction -->
+<section class="product">
+
+    <h2>Introducing SmartWatch</h2>
+
+    <img src="https://placehold.co/180x150?text=SmartWatch"
+         alt="SmartWatch">
+
+    <p>Smart technology for your daily life.</p>
+
+    <h3>Price: ₹2999</h3>
+
+</section>
+
+<!-- Features Section -->
+<section>
+
+    <h2>Our Features</h2>
+
+    <div class="features">
+
+        <div>
+            <h3>Fitness Tracking</h3>
+            <p>Track your daily activities.</p>
+        </div>
+
+        <div>
+            <h3>Long Battery</h3>
+            <p>Enjoy long battery life.</p>
+        </div>
+
+        <div>
+            <h3>Water Resistant</h3>
+            <p>Use it during workouts.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Call to Action -->
+<section class="cta">
+
+    <h2>Get Your SmartWatch Today!</h2>
+
+    <button onclick="alert('Thank you!')">
+        Buy Now
+    </button>
+
+    <button onclick="alert('Thank you!')">
+        Sign Up
+    </button>
+
+</section>
+
+</body>
+</html>
